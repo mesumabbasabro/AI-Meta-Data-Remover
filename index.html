@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Inspect and remove embedded image metadata locally, for free. Supports JPEG, PNG, and WebP, without uploading files." />
+  <meta name="theme-color" content="#f6f9fc" />
+  <title>AI Metadata Remover — Free Image Metadata Cleaner</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header wrap">
+    <a href="./" class="logo" aria-label="AI Metadata Remover home"><span class="mark">✦</span> AI Metadata <strong>Remover</strong></a>
+    <span class="top-note"><span class="lock">●</span> Files stay on your device</span>
+  </header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="main-title">
+      <p class="eyebrow">FREE · NO SIGN-UP · PRIVATE</p>
+      <h1 id="main-title">Remove hidden metadata<br /><span>from your images.</span></h1>
+      <p class="intro">Check what's embedded in your image, strip supported metadata, and download a cleaner copy. Everything runs in your browser.</p>
+    </section>
+    <section class="tool" aria-labelledby="tool-title">
+      <div class="tool-heading"><div><h2 id="tool-title">Image metadata cleaner</h2><p>JPEG · PNG · WebP · Max 25 MB</p></div><span class="private-pill">🔒 Local processing</span></div>
+      <label class="dropzone" id="dropzone" for="fileInput">
+        <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" />
+        <span class="upload-icon">↑</span>
+        <strong>Drop an image here or click to browse</strong>
+        <small>Your image never leaves your browser.</small>
+      </label>
+      <div id="workspace" class="workspace hidden" aria-live="polite">
+        <div class="file-row"><div class="preview"><img id="preview" alt="Selected image preview" /></div><div class="file-copy"><strong id="filename"></strong><span id="filesize"></span><button id="changeBtn" class="text-button" type="button">Choose another image</button></div></div>
+        <div class="report"><div class="report-title"><h3>Metadata inspection</h3><span id="statusPill" class="pill">Ready</span></div><p id="summary" class="report-summary"></p><div id="details" class="details"></div></div>
+        <div class="actions"><button id="cleanBtn" class="primary" type="button">Remove metadata</button><a id="downloadBtn" class="secondary hidden" href="#" download>Download cleaned image ↓</a></div>
+        <div id="result" class="result hidden" role="status"></div>
+      </div>
+      <div id="error" class="error hidden" role="alert"></div>
+    </section>
+    <section class="info-grid" aria-label="Why use this tool">
+      <article><span class="feature">◉</span><h3>Check before sharing</h3><p>See what kinds of embedded metadata your image contains.</p></article>
+      <article><span class="feature">◇</span><h3>Keep image data intact</h3><p>Strip supported metadata without recompressing image pixels.</p></article>
+      <article><span class="feature">▢</span><h3>No uploads required</h3><p>Processing takes place on your own device, with no account needed.</p></article>
+    </section>
+    <section class="faq"><h2>Frequently asked questions</h2><details><summary>Does this remove AI detection or invisible watermarks?</summary><p>No. Removing file metadata does not guarantee an image cannot be identified as AI-generated. Pixel-level watermarks, visual patterns, and copies of provenance elsewhere are outside this tool's scope.</p></details><details><summary>What information does this tool remove?</summary><p>It strips supported metadata containers such as EXIF, XMP, comments, and common embedded AI generation parameters. It preserves image and color-profile data needed for faithful display. For JPEG, ICC profiles and Adobe color information are retained.</p></details><details><summary>Are my pictures uploaded to a server?</summary><p>No. The code inspects and transforms the image locally in your browser. Your images are processed locally and are not sent to our servers.</p></details><details><summary>Does it work on every image?</summary><p>The tool supports standard JPEG, PNG and WebP files. It preserves essential image information and rejects malformed or unsupported formats. Specialized metadata, custom formats or invisible watermarks may remain. Check the verification report after cleaning.</p></details></section>
+  </main>
+  <footer class="wrap">© <span id="year"></span> AI Metadata Remover <span>·</span> Free browser-based image utility</footer>
+</body>
+</html>
