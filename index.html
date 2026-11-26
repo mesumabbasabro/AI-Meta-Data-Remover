@@ -23,14 +23,15 @@
     <section class="tool" aria-labelledby="tool-title">
       <div class="tool-heading"><div><h2 id="tool-title">Image metadata cleaner</h2><p>JPEG · PNG · WebP · Max 25 MB</p></div><span class="private-pill">🔒 Local processing</span></div>
       <label class="dropzone" id="dropzone" for="fileInput">
-        <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" />
+        <input id="fileInput" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" />
         <span class="upload-icon">↑</span>
-        <strong>Drop an image here or click to browse</strong>
+        <strong>Tap to choose an image or drop it here</strong>
         <small>Your image never leaves your browser.</small>
       </label>
+      <div class="android-file-picker"><button type="button" id="filesPickerBtn" class="files-picker-btn">Choose original file from Files</button><input id="rawFileInput" type="file" accept="*/*" class="hidden" /><p>On Android, choose Files or Downloads instead of a Gallery export to preserve the original file.</p></div>
       <div id="workspace" class="workspace hidden" aria-live="polite">
         <div class="file-row"><div class="preview"><img id="preview" alt="Selected image preview" /></div><div class="file-copy"><strong id="filename"></strong><span id="filesize"></span><button id="changeBtn" class="text-button" type="button">Choose another image</button></div></div>
-        <div class="report"><div class="report-title"><h3>Metadata inspection</h3><span id="statusPill" class="pill">Ready</span></div><p id="summary" class="report-summary"></p><div id="details" class="details"></div></div>
+        <div class="report"><div class="report-title"><h3>Metadata inspection</h3><span id="statusPill" class="pill">Ready</span></div><p id="summary" class="report-summary"></p><div id="details" class="details"></div><p id="fingerprint" class="fingerprint"></p><button type="button" id="copyFingerprint" class="text-button">Copy file check details</button></div>
         <div class="actions"><button id="cleanBtn" class="primary" type="button">Remove metadata</button><a id="downloadBtn" class="secondary hidden" href="#" download>Download cleaned image ↓</a></div>
         <div id="result" class="result hidden" role="status"></div>
       </div>
